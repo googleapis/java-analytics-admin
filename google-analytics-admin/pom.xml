@@ -9,7 +9,7 @@
   <url>https://github.com/googleapis/java-analytics-admin</url>
   <description>allows you to manage Google Analytics accounts and properties.</description>
   <parent>
-    <groupId>com.google.cloud</groupId>
+    <groupId>com.google.analytics</groupId>
     <artifactId>google-analytics-admin-parent</artifactId>
     <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
   </parent>
