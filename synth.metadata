@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-analytics-admin.git",
-        "sha": "e481494e719d9ace7cc18eb3bd76f18066489615"
+        "sha": "200e842df9aa6285c33d09834831127bb8c1695f"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "80003a3de2d8a75f5b47cb2e77e018f7f0f776cc"
+        "sha": "916c10e8581804df2b48a0f0457d848f3faa582e"
       }
     }
   ],
@@ -92,7 +92,6 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
-    "README.md",
     "codecov.yaml",
     "google-analytics-admin/src/main/java/com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient.java",
     "google-analytics-admin/src/main/java/com/google/analytics/admin/v1alpha/AnalyticsAdminServiceSettings.java",
