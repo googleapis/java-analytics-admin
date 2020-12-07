@@ -22,7 +22,13 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * Service Interface for the Analytics Admin API (GA4).
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/analytics/admin/v1alpha/analytics_admin.proto")
@@ -2424,17 +2430,40 @@ public final class AnalyticsAdminServiceGrpc {
     return AnalyticsAdminServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service Interface for the Analytics Admin API (GA4).
+   * </pre>
+   */
   public abstract static class AnalyticsAdminServiceImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Account.
+     * Throws "Target not found" if no such account found, or if caller does not
+     * have permissions to access it.
+     * </pre>
+     */
     public void getAccount(
         com.google.analytics.admin.v1alpha.GetAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Account> responseObserver) {
       asyncUnimplementedUnaryCall(getGetAccountMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns all accounts accessible by the caller.
+     * Note that these accounts might not currently have GA4 properties.
+     * Soft-deleted (ie: "trashed") accounts are excluded by default.
+     * Returns an empty list if no relevant accounts are found.
+     * </pre>
+     */
     public void listAccounts(
         com.google.analytics.admin.v1alpha.ListAccountsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAccountsResponse>
@@ -2442,21 +2471,46 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getListAccountsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Marks target Account as soft-deleted (ie: "trashed") and returns it.
+     * This API does not have a method to restore soft-deleted accounts.
+     * However, they can be restored using the Trash Can UI.
+     * If the accounts are not restored before the expiration time, the account
+     * and all child resources (eg: Properties, GoogleAdsLinks, Streams,
+     * UserLinks) will be permanently purged.
+     * https://support.google.com/analytics/answer/6154772
+     * Returns an error if the target is not found.
+     * </pre>
+     */
     public void deleteAccount(
         com.google.analytics.admin.v1alpha.DeleteAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteAccountMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an account.
+     * </pre>
+     */
     public void updateAccount(
         com.google.analytics.admin.v1alpha.UpdateAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Account> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateAccountMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Requests a ticket for creating an account.
+     * </pre>
+     */
     public void provisionAccountTicket(
         com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest request,
         io.grpc.stub.StreamObserver<
@@ -2465,7 +2519,13 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getProvisionAccountTicketMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns summaries of all accounts accessible by the caller.
+     * </pre>
+     */
     public void listAccountSummaries(
         com.google.analytics.admin.v1alpha.ListAccountSummariesRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>
@@ -2473,14 +2533,32 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getListAccountSummariesMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single "GA4" Property.
+     * Throws "Target not found" if no such property found, if property is not
+     * of the type "GA4", or if caller does not have permissions to access it.
+     * </pre>
+     */
     public void getProperty(
         com.google.analytics.admin.v1alpha.GetPropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
       asyncUnimplementedUnaryCall(getGetPropertyMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child Properties under the specified parent Account.
+     * Only "GA4" properties will be returned.
+     * Properties will be excluded if the caller does not have access.
+     * Soft-deleted (ie: "trashed") properties are excluded by default.
+     * Returns an empty list if no relevant properties are found.
+     * </pre>
+     */
     public void listProperties(
         com.google.analytics.admin.v1alpha.ListPropertiesRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListPropertiesResponse>
@@ -2488,35 +2566,72 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getListPropertiesMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an "GA4" property with the specified location and attributes.
+     * </pre>
+     */
     public void createProperty(
         com.google.analytics.admin.v1alpha.CreatePropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
       asyncUnimplementedUnaryCall(getCreatePropertyMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Marks target Property as soft-deleted (ie: "trashed") and returns it.
+     * This API does not have a method to restore soft-deleted properties.
+     * However, they can be restored using the Trash Can UI.
+     * If the properties are not restored before the expiration time, the Property
+     * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
+     * will be permanently purged.
+     * https://support.google.com/analytics/answer/6154772
+     * Returns an error if the target is not found, or is not an GA4 Property.
+     * </pre>
+     */
     public void deleteProperty(
         com.google.analytics.admin.v1alpha.DeletePropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeletePropertyMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a property.
+     * </pre>
+     */
     public void updateProperty(
         com.google.analytics.admin.v1alpha.UpdatePropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdatePropertyMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a user's link to an account or property.
+     * </pre>
+     */
     public void getUserLink(
         com.google.analytics.admin.v1alpha.GetUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
       asyncUnimplementedUnaryCall(getGetUserLinkMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about multiple users' links to an account or property.
+     * </pre>
+     */
     public void batchGetUserLinks(
         com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>
@@ -2524,7 +2639,13 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getBatchGetUserLinksMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all user links on an account or property.
+     * </pre>
+     */
     public void listUserLinks(
         com.google.analytics.admin.v1alpha.ListUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListUserLinksResponse>
@@ -2532,7 +2653,20 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getListUserLinksMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all user links on an account or property, including implicit ones
+     * that come from effective permissions granted by groups or organization
+     * admin roles.
+     * If a returned user link does not have direct permissions, they cannot
+     * be removed from the account or property directly with the DeleteUserLink
+     * command. They have to be removed from the group/etc that gives them
+     * permissions, which is currently only usable/discoverable in the GA or GMP
+     * UIs.
+     * </pre>
+     */
     public void auditUserLinks(
         com.google.analytics.admin.v1alpha.AuditUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AuditUserLinksResponse>
@@ -2540,14 +2674,31 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getAuditUserLinksMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user link on an account or property.
+     * If the user with the specified email already has permissions on the
+     * account or property, then the user's existing permissions will be unioned
+     * with the permissions specified in the new UserLink.
+     * </pre>
+     */
     public void createUserLink(
         com.google.analytics.admin.v1alpha.CreateUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateUserLinkMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates information about multiple users' links to an account or property.
+     * This method is transactional. If any UserLink cannot be created, none of
+     * the UserLinks will be created.
+     * </pre>
+     */
     public void batchCreateUserLinks(
         com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>
@@ -2555,14 +2706,26 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getBatchCreateUserLinksMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user link on an account or property.
+     * </pre>
+     */
     public void updateUserLink(
         com.google.analytics.admin.v1alpha.UpdateUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateUserLinkMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates information about multiple users' links to an account or property.
+     * </pre>
+     */
     public void batchUpdateUserLinks(
         com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>
@@ -2570,21 +2733,41 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getBatchUpdateUserLinksMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user link on an account or property.
+     * </pre>
+     */
     public void deleteUserLink(
         com.google.analytics.admin.v1alpha.DeleteUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteUserLinkMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes information about multiple users' links to an account or property.
+     * </pre>
+     */
     public void batchDeleteUserLinks(
         com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getBatchDeleteUserLinksMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single WebDataStream
+     * Throws "Target not found" if no such web data stream found, or if the
+     * caller does not have permissions to access it.
+     * </pre>
+     */
     public void getWebDataStream(
         com.google.analytics.admin.v1alpha.GetWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.WebDataStream>
@@ -2592,14 +2775,26 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getGetWebDataStreamMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a web stream on a property.
+     * </pre>
+     */
     public void deleteWebDataStream(
         com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteWebDataStreamMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a web stream on a property.
+     * </pre>
+     */
     public void updateWebDataStream(
         com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.WebDataStream>
@@ -2607,7 +2802,13 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getUpdateWebDataStreamMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a web stream with the specified location and attributes.
+     * </pre>
+     */
     public void createWebDataStream(
         com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.WebDataStream>
@@ -2615,7 +2816,15 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateWebDataStreamMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child web data streams under the specified parent property.
+     * Web data streams will be excluded if the caller does not have access.
+     * Returns an empty list if no relevant web data streams are found.
+     * </pre>
+     */
     public void listWebDataStreams(
         com.google.analytics.admin.v1alpha.ListWebDataStreamsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse>
@@ -2623,7 +2832,15 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getListWebDataStreamsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single IosAppDataStream
+     * Throws "Target not found" if no such iOS app data stream found, or if the
+     * caller does not have permissions to access it.
+     * </pre>
+     */
     public void getIosAppDataStream(
         com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream>
@@ -2631,14 +2848,26 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getGetIosAppDataStreamMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an iOS app stream on a property.
+     * </pre>
+     */
     public void deleteIosAppDataStream(
         com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteIosAppDataStreamMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an iOS app stream on a property.
+     * </pre>
+     */
     public void updateIosAppDataStream(
         com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream>
@@ -2646,7 +2875,13 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getUpdateIosAppDataStreamMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an iOS app data stream with the specified location and attributes.
+     * </pre>
+     */
     public void createIosAppDataStream(
         com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream>
@@ -2654,7 +2889,15 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateIosAppDataStreamMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child iOS app data streams under the specified parent property.
+     * iOS app data streams will be excluded if the caller does not have access.
+     * Returns an empty list if no relevant iOS app data streams are found.
+     * </pre>
+     */
     public void listIosAppDataStreams(
         com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest request,
         io.grpc.stub.StreamObserver<
@@ -2663,7 +2906,15 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getListIosAppDataStreamsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single AndroidAppDataStream
+     * Throws "Target not found" if no such android app data stream found, or if
+     * the caller does not have permissions to access it.
+     * </pre>
+     */
     public void getAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream>
@@ -2671,14 +2922,26 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getGetAndroidAppDataStreamMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an android app stream on a property.
+     * </pre>
+     */
     public void deleteAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteAndroidAppDataStreamMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an android app stream on a property.
+     * </pre>
+     */
     public void updateAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream>
@@ -2686,7 +2949,13 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getUpdateAndroidAppDataStreamMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an android app stream with the specified location and attributes.
+     * </pre>
+     */
     public void createAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream>
@@ -2694,7 +2963,15 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateAndroidAppDataStreamMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child android app streams under the specified parent property.
+     * Android app streams will be excluded if the caller does not have access.
+     * Returns an empty list if no relevant android app streams are found.
+     * </pre>
+     */
     public void listAndroidAppDataStreams(
         com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest request,
         io.grpc.stub.StreamObserver<
@@ -2703,7 +2980,15 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getListAndroidAppDataStreamsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the singleton enhanced measurement settings for this web stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
     public void getEnhancedMeasurementSettings(
         com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
@@ -2711,7 +2996,15 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getGetEnhancedMeasurementSettingsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the singleton enhanced measurement settings for this web stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
     public void updateEnhancedMeasurementSettings(
         com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
@@ -2719,7 +3012,14 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getUpdateEnhancedMeasurementSettingsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a FirebaseLink.
+     * Properties can have at most one FirebaseLink.
+     * </pre>
+     */
     public void createFirebaseLink(
         com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.FirebaseLink>
@@ -2727,7 +3027,13 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateFirebaseLinkMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a FirebaseLink on a property
+     * </pre>
+     */
     public void updateFirebaseLink(
         com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.FirebaseLink>
@@ -2735,14 +3041,27 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getUpdateFirebaseLinkMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a FirebaseLink on a property
+     * </pre>
+     */
     public void deleteFirebaseLink(
         com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteFirebaseLinkMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists FirebaseLinks on a property.
+     * Properties can have at most one FirebaseLink.
+     * </pre>
+     */
     public void listFirebaseLinks(
         com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse>
@@ -2750,7 +3069,14 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getListFirebaseLinksMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the Site Tag for the specified web stream.
+     * Site Tags are immutable singletons.
+     * </pre>
+     */
     public void getGlobalSiteTag(
         com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GlobalSiteTag>
@@ -2758,7 +3084,13 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getGetGlobalSiteTagMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a GoogleAdsLink.
+     * </pre>
+     */
     public void createGoogleAdsLink(
         com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleAdsLink>
@@ -2766,7 +3098,13 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateGoogleAdsLinkMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a GoogleAdsLink on a property
+     * </pre>
+     */
     public void updateGoogleAdsLink(
         com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleAdsLink>
@@ -2774,14 +3112,26 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getUpdateGoogleAdsLinkMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a GoogleAdsLink on a property
+     * </pre>
+     */
     public void deleteGoogleAdsLink(
         com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteGoogleAdsLinkMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists GoogleAdsLinks on a property.
+     * </pre>
+     */
     public void listGoogleAdsLinks(
         com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse>
@@ -2789,7 +3139,14 @@ public final class AnalyticsAdminServiceGrpc {
       asyncUnimplementedUnaryCall(getListGoogleAdsLinksMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Get data sharing settings on an account.
+     * Data sharing settings are singletons.
+     * </pre>
+     */
     public void getDataSharingSettings(
         com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataSharingSettings>
@@ -3125,7 +3482,13 @@ public final class AnalyticsAdminServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service Interface for the Analytics Admin API (GA4).
+   * </pre>
+   */
   public static final class AnalyticsAdminServiceStub
       extends io.grpc.stub.AbstractAsyncStub<AnalyticsAdminServiceStub> {
     private AnalyticsAdminServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -3138,7 +3501,15 @@ public final class AnalyticsAdminServiceGrpc {
       return new AnalyticsAdminServiceStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Account.
+     * Throws "Target not found" if no such account found, or if caller does not
+     * have permissions to access it.
+     * </pre>
+     */
     public void getAccount(
         com.google.analytics.admin.v1alpha.GetAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Account> responseObserver) {
@@ -3146,7 +3517,16 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getGetAccountMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns all accounts accessible by the caller.
+     * Note that these accounts might not currently have GA4 properties.
+     * Soft-deleted (ie: "trashed") accounts are excluded by default.
+     * Returns an empty list if no relevant accounts are found.
+     * </pre>
+     */
     public void listAccounts(
         com.google.analytics.admin.v1alpha.ListAccountsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAccountsResponse>
@@ -3157,7 +3537,20 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Marks target Account as soft-deleted (ie: "trashed") and returns it.
+     * This API does not have a method to restore soft-deleted accounts.
+     * However, they can be restored using the Trash Can UI.
+     * If the accounts are not restored before the expiration time, the account
+     * and all child resources (eg: Properties, GoogleAdsLinks, Streams,
+     * UserLinks) will be permanently purged.
+     * https://support.google.com/analytics/answer/6154772
+     * Returns an error if the target is not found.
+     * </pre>
+     */
     public void deleteAccount(
         com.google.analytics.admin.v1alpha.DeleteAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -3167,7 +3560,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an account.
+     * </pre>
+     */
     public void updateAccount(
         com.google.analytics.admin.v1alpha.UpdateAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Account> responseObserver) {
@@ -3177,7 +3576,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Requests a ticket for creating an account.
+     * </pre>
+     */
     public void provisionAccountTicket(
         com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest request,
         io.grpc.stub.StreamObserver<
@@ -3189,7 +3594,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns summaries of all accounts accessible by the caller.
+     * </pre>
+     */
     public void listAccountSummaries(
         com.google.analytics.admin.v1alpha.ListAccountSummariesRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>
@@ -3200,7 +3611,15 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single "GA4" Property.
+     * Throws "Target not found" if no such property found, if property is not
+     * of the type "GA4", or if caller does not have permissions to access it.
+     * </pre>
+     */
     public void getProperty(
         com.google.analytics.admin.v1alpha.GetPropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
@@ -3210,7 +3629,17 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child Properties under the specified parent Account.
+     * Only "GA4" properties will be returned.
+     * Properties will be excluded if the caller does not have access.
+     * Soft-deleted (ie: "trashed") properties are excluded by default.
+     * Returns an empty list if no relevant properties are found.
+     * </pre>
+     */
     public void listProperties(
         com.google.analytics.admin.v1alpha.ListPropertiesRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListPropertiesResponse>
@@ -3221,7 +3650,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an "GA4" property with the specified location and attributes.
+     * </pre>
+     */
     public void createProperty(
         com.google.analytics.admin.v1alpha.CreatePropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
@@ -3231,7 +3666,20 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Marks target Property as soft-deleted (ie: "trashed") and returns it.
+     * This API does not have a method to restore soft-deleted properties.
+     * However, they can be restored using the Trash Can UI.
+     * If the properties are not restored before the expiration time, the Property
+     * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
+     * will be permanently purged.
+     * https://support.google.com/analytics/answer/6154772
+     * Returns an error if the target is not found, or is not an GA4 Property.
+     * </pre>
+     */
     public void deleteProperty(
         com.google.analytics.admin.v1alpha.DeletePropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -3241,7 +3689,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a property.
+     * </pre>
+     */
     public void updateProperty(
         com.google.analytics.admin.v1alpha.UpdatePropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
@@ -3251,7 +3705,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a user's link to an account or property.
+     * </pre>
+     */
     public void getUserLink(
         com.google.analytics.admin.v1alpha.GetUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
@@ -3261,7 +3721,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about multiple users' links to an account or property.
+     * </pre>
+     */
     public void batchGetUserLinks(
         com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>
@@ -3272,7 +3738,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all user links on an account or property.
+     * </pre>
+     */
     public void listUserLinks(
         com.google.analytics.admin.v1alpha.ListUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListUserLinksResponse>
@@ -3283,7 +3755,20 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all user links on an account or property, including implicit ones
+     * that come from effective permissions granted by groups or organization
+     * admin roles.
+     * If a returned user link does not have direct permissions, they cannot
+     * be removed from the account or property directly with the DeleteUserLink
+     * command. They have to be removed from the group/etc that gives them
+     * permissions, which is currently only usable/discoverable in the GA or GMP
+     * UIs.
+     * </pre>
+     */
     public void auditUserLinks(
         com.google.analytics.admin.v1alpha.AuditUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AuditUserLinksResponse>
@@ -3294,7 +3779,16 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user link on an account or property.
+     * If the user with the specified email already has permissions on the
+     * account or property, then the user's existing permissions will be unioned
+     * with the permissions specified in the new UserLink.
+     * </pre>
+     */
     public void createUserLink(
         com.google.analytics.admin.v1alpha.CreateUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
@@ -3304,7 +3798,15 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates information about multiple users' links to an account or property.
+     * This method is transactional. If any UserLink cannot be created, none of
+     * the UserLinks will be created.
+     * </pre>
+     */
     public void batchCreateUserLinks(
         com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>
@@ -3315,7 +3817,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user link on an account or property.
+     * </pre>
+     */
     public void updateUserLink(
         com.google.analytics.admin.v1alpha.UpdateUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
@@ -3325,7 +3833,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates information about multiple users' links to an account or property.
+     * </pre>
+     */
     public void batchUpdateUserLinks(
         com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>
@@ -3336,7 +3850,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user link on an account or property.
+     * </pre>
+     */
     public void deleteUserLink(
         com.google.analytics.admin.v1alpha.DeleteUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -3346,7 +3866,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes information about multiple users' links to an account or property.
+     * </pre>
+     */
     public void batchDeleteUserLinks(
         com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -3356,7 +3882,15 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single WebDataStream
+     * Throws "Target not found" if no such web data stream found, or if the
+     * caller does not have permissions to access it.
+     * </pre>
+     */
     public void getWebDataStream(
         com.google.analytics.admin.v1alpha.GetWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.WebDataStream>
@@ -3367,7 +3901,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a web stream on a property.
+     * </pre>
+     */
     public void deleteWebDataStream(
         com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -3377,7 +3917,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a web stream on a property.
+     * </pre>
+     */
     public void updateWebDataStream(
         com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.WebDataStream>
@@ -3388,7 +3934,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a web stream with the specified location and attributes.
+     * </pre>
+     */
     public void createWebDataStream(
         com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.WebDataStream>
@@ -3399,7 +3951,15 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child web data streams under the specified parent property.
+     * Web data streams will be excluded if the caller does not have access.
+     * Returns an empty list if no relevant web data streams are found.
+     * </pre>
+     */
     public void listWebDataStreams(
         com.google.analytics.admin.v1alpha.ListWebDataStreamsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse>
@@ -3410,7 +3970,15 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single IosAppDataStream
+     * Throws "Target not found" if no such iOS app data stream found, or if the
+     * caller does not have permissions to access it.
+     * </pre>
+     */
     public void getIosAppDataStream(
         com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream>
@@ -3421,7 +3989,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an iOS app stream on a property.
+     * </pre>
+     */
     public void deleteIosAppDataStream(
         com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -3431,7 +4005,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an iOS app stream on a property.
+     * </pre>
+     */
     public void updateIosAppDataStream(
         com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream>
@@ -3442,7 +4022,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an iOS app data stream with the specified location and attributes.
+     * </pre>
+     */
     public void createIosAppDataStream(
         com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream>
@@ -3453,7 +4039,15 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child iOS app data streams under the specified parent property.
+     * iOS app data streams will be excluded if the caller does not have access.
+     * Returns an empty list if no relevant iOS app data streams are found.
+     * </pre>
+     */
     public void listIosAppDataStreams(
         com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest request,
         io.grpc.stub.StreamObserver<
@@ -3465,7 +4059,15 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single AndroidAppDataStream
+     * Throws "Target not found" if no such android app data stream found, or if
+     * the caller does not have permissions to access it.
+     * </pre>
+     */
     public void getAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream>
@@ -3476,7 +4078,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an android app stream on a property.
+     * </pre>
+     */
     public void deleteAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -3486,7 +4094,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an android app stream on a property.
+     * </pre>
+     */
     public void updateAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream>
@@ -3497,7 +4111,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an android app stream with the specified location and attributes.
+     * </pre>
+     */
     public void createAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream>
@@ -3508,7 +4128,15 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child android app streams under the specified parent property.
+     * Android app streams will be excluded if the caller does not have access.
+     * Returns an empty list if no relevant android app streams are found.
+     * </pre>
+     */
     public void listAndroidAppDataStreams(
         com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest request,
         io.grpc.stub.StreamObserver<
@@ -3520,7 +4148,15 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the singleton enhanced measurement settings for this web stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
     public void getEnhancedMeasurementSettings(
         com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
@@ -3531,7 +4167,15 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the singleton enhanced measurement settings for this web stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
     public void updateEnhancedMeasurementSettings(
         com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
@@ -3542,7 +4186,14 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a FirebaseLink.
+     * Properties can have at most one FirebaseLink.
+     * </pre>
+     */
     public void createFirebaseLink(
         com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.FirebaseLink>
@@ -3553,7 +4204,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a FirebaseLink on a property
+     * </pre>
+     */
     public void updateFirebaseLink(
         com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.FirebaseLink>
@@ -3564,7 +4221,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a FirebaseLink on a property
+     * </pre>
+     */
     public void deleteFirebaseLink(
         com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -3574,7 +4237,14 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists FirebaseLinks on a property.
+     * Properties can have at most one FirebaseLink.
+     * </pre>
+     */
     public void listFirebaseLinks(
         com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse>
@@ -3585,7 +4255,14 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the Site Tag for the specified web stream.
+     * Site Tags are immutable singletons.
+     * </pre>
+     */
     public void getGlobalSiteTag(
         com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GlobalSiteTag>
@@ -3596,7 +4273,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a GoogleAdsLink.
+     * </pre>
+     */
     public void createGoogleAdsLink(
         com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleAdsLink>
@@ -3607,7 +4290,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a GoogleAdsLink on a property
+     * </pre>
+     */
     public void updateGoogleAdsLink(
         com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleAdsLink>
@@ -3618,7 +4307,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a GoogleAdsLink on a property
+     * </pre>
+     */
     public void deleteGoogleAdsLink(
         com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -3628,7 +4323,13 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists GoogleAdsLinks on a property.
+     * </pre>
+     */
     public void listGoogleAdsLinks(
         com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse>
@@ -3639,7 +4340,14 @@ public final class AnalyticsAdminServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Get data sharing settings on an account.
+     * Data sharing settings are singletons.
+     * </pre>
+     */
     public void getDataSharingSettings(
         com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataSharingSettings>
@@ -3651,7 +4359,13 @@ public final class AnalyticsAdminServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service Interface for the Analytics Admin API (GA4).
+   * </pre>
+   */
   public static final class AnalyticsAdminServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<AnalyticsAdminServiceBlockingStub> {
     private AnalyticsAdminServiceBlockingStub(
@@ -3665,237 +4379,502 @@ public final class AnalyticsAdminServiceGrpc {
       return new AnalyticsAdminServiceBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Account.
+     * Throws "Target not found" if no such account found, or if caller does not
+     * have permissions to access it.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.Account getAccount(
         com.google.analytics.admin.v1alpha.GetAccountRequest request) {
       return blockingUnaryCall(getChannel(), getGetAccountMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns all accounts accessible by the caller.
+     * Note that these accounts might not currently have GA4 properties.
+     * Soft-deleted (ie: "trashed") accounts are excluded by default.
+     * Returns an empty list if no relevant accounts are found.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.ListAccountsResponse listAccounts(
         com.google.analytics.admin.v1alpha.ListAccountsRequest request) {
       return blockingUnaryCall(getChannel(), getListAccountsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Marks target Account as soft-deleted (ie: "trashed") and returns it.
+     * This API does not have a method to restore soft-deleted accounts.
+     * However, they can be restored using the Trash Can UI.
+     * If the accounts are not restored before the expiration time, the account
+     * and all child resources (eg: Properties, GoogleAdsLinks, Streams,
+     * UserLinks) will be permanently purged.
+     * https://support.google.com/analytics/answer/6154772
+     * Returns an error if the target is not found.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteAccount(
         com.google.analytics.admin.v1alpha.DeleteAccountRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteAccountMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an account.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.Account updateAccount(
         com.google.analytics.admin.v1alpha.UpdateAccountRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateAccountMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Requests a ticket for creating an account.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse provisionAccountTicket(
         com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest request) {
       return blockingUnaryCall(
           getChannel(), getProvisionAccountTicketMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns summaries of all accounts accessible by the caller.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.ListAccountSummariesResponse listAccountSummaries(
         com.google.analytics.admin.v1alpha.ListAccountSummariesRequest request) {
       return blockingUnaryCall(
           getChannel(), getListAccountSummariesMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single "GA4" Property.
+     * Throws "Target not found" if no such property found, if property is not
+     * of the type "GA4", or if caller does not have permissions to access it.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.Property getProperty(
         com.google.analytics.admin.v1alpha.GetPropertyRequest request) {
       return blockingUnaryCall(getChannel(), getGetPropertyMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child Properties under the specified parent Account.
+     * Only "GA4" properties will be returned.
+     * Properties will be excluded if the caller does not have access.
+     * Soft-deleted (ie: "trashed") properties are excluded by default.
+     * Returns an empty list if no relevant properties are found.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.ListPropertiesResponse listProperties(
         com.google.analytics.admin.v1alpha.ListPropertiesRequest request) {
       return blockingUnaryCall(getChannel(), getListPropertiesMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an "GA4" property with the specified location and attributes.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.Property createProperty(
         com.google.analytics.admin.v1alpha.CreatePropertyRequest request) {
       return blockingUnaryCall(getChannel(), getCreatePropertyMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Marks target Property as soft-deleted (ie: "trashed") and returns it.
+     * This API does not have a method to restore soft-deleted properties.
+     * However, they can be restored using the Trash Can UI.
+     * If the properties are not restored before the expiration time, the Property
+     * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
+     * will be permanently purged.
+     * https://support.google.com/analytics/answer/6154772
+     * Returns an error if the target is not found, or is not an GA4 Property.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteProperty(
         com.google.analytics.admin.v1alpha.DeletePropertyRequest request) {
       return blockingUnaryCall(getChannel(), getDeletePropertyMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a property.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.Property updateProperty(
         com.google.analytics.admin.v1alpha.UpdatePropertyRequest request) {
       return blockingUnaryCall(getChannel(), getUpdatePropertyMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a user's link to an account or property.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.UserLink getUserLink(
         com.google.analytics.admin.v1alpha.GetUserLinkRequest request) {
       return blockingUnaryCall(getChannel(), getGetUserLinkMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about multiple users' links to an account or property.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse batchGetUserLinks(
         com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest request) {
       return blockingUnaryCall(
           getChannel(), getBatchGetUserLinksMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all user links on an account or property.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.ListUserLinksResponse listUserLinks(
         com.google.analytics.admin.v1alpha.ListUserLinksRequest request) {
       return blockingUnaryCall(getChannel(), getListUserLinksMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all user links on an account or property, including implicit ones
+     * that come from effective permissions granted by groups or organization
+     * admin roles.
+     * If a returned user link does not have direct permissions, they cannot
+     * be removed from the account or property directly with the DeleteUserLink
+     * command. They have to be removed from the group/etc that gives them
+     * permissions, which is currently only usable/discoverable in the GA or GMP
+     * UIs.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.AuditUserLinksResponse auditUserLinks(
         com.google.analytics.admin.v1alpha.AuditUserLinksRequest request) {
       return blockingUnaryCall(getChannel(), getAuditUserLinksMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user link on an account or property.
+     * If the user with the specified email already has permissions on the
+     * account or property, then the user's existing permissions will be unioned
+     * with the permissions specified in the new UserLink.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.UserLink createUserLink(
         com.google.analytics.admin.v1alpha.CreateUserLinkRequest request) {
       return blockingUnaryCall(getChannel(), getCreateUserLinkMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates information about multiple users' links to an account or property.
+     * This method is transactional. If any UserLink cannot be created, none of
+     * the UserLinks will be created.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse batchCreateUserLinks(
         com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest request) {
       return blockingUnaryCall(
           getChannel(), getBatchCreateUserLinksMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user link on an account or property.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.UserLink updateUserLink(
         com.google.analytics.admin.v1alpha.UpdateUserLinkRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateUserLinkMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates information about multiple users' links to an account or property.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse batchUpdateUserLinks(
         com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest request) {
       return blockingUnaryCall(
           getChannel(), getBatchUpdateUserLinksMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user link on an account or property.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteUserLink(
         com.google.analytics.admin.v1alpha.DeleteUserLinkRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteUserLinkMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes information about multiple users' links to an account or property.
+     * </pre>
+     */
     public com.google.protobuf.Empty batchDeleteUserLinks(
         com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest request) {
       return blockingUnaryCall(
           getChannel(), getBatchDeleteUserLinksMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single WebDataStream
+     * Throws "Target not found" if no such web data stream found, or if the
+     * caller does not have permissions to access it.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.WebDataStream getWebDataStream(
         com.google.analytics.admin.v1alpha.GetWebDataStreamRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetWebDataStreamMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a web stream on a property.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteWebDataStream(
         com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteWebDataStreamMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a web stream on a property.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.WebDataStream updateWebDataStream(
         com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateWebDataStreamMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a web stream with the specified location and attributes.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.WebDataStream createWebDataStream(
         com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateWebDataStreamMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child web data streams under the specified parent property.
+     * Web data streams will be excluded if the caller does not have access.
+     * Returns an empty list if no relevant web data streams are found.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse listWebDataStreams(
         com.google.analytics.admin.v1alpha.ListWebDataStreamsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListWebDataStreamsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single IosAppDataStream
+     * Throws "Target not found" if no such iOS app data stream found, or if the
+     * caller does not have permissions to access it.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.IosAppDataStream getIosAppDataStream(
         com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetIosAppDataStreamMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an iOS app stream on a property.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteIosAppDataStream(
         com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteIosAppDataStreamMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an iOS app stream on a property.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.IosAppDataStream updateIosAppDataStream(
         com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateIosAppDataStreamMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an iOS app data stream with the specified location and attributes.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.IosAppDataStream createIosAppDataStream(
         com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateIosAppDataStreamMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child iOS app data streams under the specified parent property.
+     * iOS app data streams will be excluded if the caller does not have access.
+     * Returns an empty list if no relevant iOS app data streams are found.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.ListIosAppDataStreamsResponse listIosAppDataStreams(
         com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListIosAppDataStreamsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single AndroidAppDataStream
+     * Throws "Target not found" if no such android app data stream found, or if
+     * the caller does not have permissions to access it.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.AndroidAppDataStream getAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetAndroidAppDataStreamMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an android app stream on a property.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteAndroidAppDataStreamMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an android app stream on a property.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.AndroidAppDataStream updateAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateAndroidAppDataStreamMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an android app stream with the specified location and attributes.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.AndroidAppDataStream createAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateAndroidAppDataStreamMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child android app streams under the specified parent property.
+     * Android app streams will be excluded if the caller does not have access.
+     * Returns an empty list if no relevant android app streams are found.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsResponse
         listAndroidAppDataStreams(
             com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest request) {
@@ -3903,7 +4882,15 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel(), getListAndroidAppDataStreamsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the singleton enhanced measurement settings for this web stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
         getEnhancedMeasurementSettings(
             com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request) {
@@ -3911,7 +4898,15 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel(), getGetEnhancedMeasurementSettingsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the singleton enhanced measurement settings for this web stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
         updateEnhancedMeasurementSettings(
             com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request) {
@@ -3919,70 +4914,134 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel(), getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a FirebaseLink.
+     * Properties can have at most one FirebaseLink.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.FirebaseLink createFirebaseLink(
         com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateFirebaseLinkMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a FirebaseLink on a property
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.FirebaseLink updateFirebaseLink(
         com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateFirebaseLinkMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a FirebaseLink on a property
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteFirebaseLink(
         com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteFirebaseLinkMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists FirebaseLinks on a property.
+     * Properties can have at most one FirebaseLink.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse listFirebaseLinks(
         com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest request) {
       return blockingUnaryCall(
           getChannel(), getListFirebaseLinksMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the Site Tag for the specified web stream.
+     * Site Tags are immutable singletons.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.GlobalSiteTag getGlobalSiteTag(
         com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetGlobalSiteTagMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a GoogleAdsLink.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.GoogleAdsLink createGoogleAdsLink(
         com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateGoogleAdsLinkMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a GoogleAdsLink on a property
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.GoogleAdsLink updateGoogleAdsLink(
         com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateGoogleAdsLinkMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a GoogleAdsLink on a property
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteGoogleAdsLink(
         com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteGoogleAdsLinkMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists GoogleAdsLinks on a property.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse listGoogleAdsLinks(
         com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest request) {
       return blockingUnaryCall(
           getChannel(), getListGoogleAdsLinksMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Get data sharing settings on an account.
+     * Data sharing settings are singletons.
+     * </pre>
+     */
     public com.google.analytics.admin.v1alpha.DataSharingSettings getDataSharingSettings(
         com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest request) {
       return blockingUnaryCall(
@@ -3990,7 +5049,13 @@ public final class AnalyticsAdminServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service Interface for the Analytics Admin API (GA4).
+   * </pre>
+   */
   public static final class AnalyticsAdminServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<AnalyticsAdminServiceFutureStub> {
     private AnalyticsAdminServiceFutureStub(
@@ -4004,7 +5069,15 @@ public final class AnalyticsAdminServiceGrpc {
       return new AnalyticsAdminServiceFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Account.
+     * Throws "Target not found" if no such account found, or if caller does not
+     * have permissions to access it.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.Account>
         getAccount(com.google.analytics.admin.v1alpha.GetAccountRequest request) {
@@ -4012,7 +5085,16 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getGetAccountMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns all accounts accessible by the caller.
+     * Note that these accounts might not currently have GA4 properties.
+     * Soft-deleted (ie: "trashed") accounts are excluded by default.
+     * Returns an empty list if no relevant accounts are found.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.ListAccountsResponse>
         listAccounts(com.google.analytics.admin.v1alpha.ListAccountsRequest request) {
@@ -4020,14 +5102,33 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getListAccountsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Marks target Account as soft-deleted (ie: "trashed") and returns it.
+     * This API does not have a method to restore soft-deleted accounts.
+     * However, they can be restored using the Trash Can UI.
+     * If the accounts are not restored before the expiration time, the account
+     * and all child resources (eg: Properties, GoogleAdsLinks, Streams,
+     * UserLinks) will be permanently purged.
+     * https://support.google.com/analytics/answer/6154772
+     * Returns an error if the target is not found.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteAccount(com.google.analytics.admin.v1alpha.DeleteAccountRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteAccountMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an account.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.Account>
         updateAccount(com.google.analytics.admin.v1alpha.UpdateAccountRequest request) {
@@ -4035,7 +5136,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getUpdateAccountMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Requests a ticket for creating an account.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse>
         provisionAccountTicket(
@@ -4044,7 +5151,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getProvisionAccountTicketMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns summaries of all accounts accessible by the caller.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>
         listAccountSummaries(
@@ -4053,7 +5166,15 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getListAccountSummariesMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single "GA4" Property.
+     * Throws "Target not found" if no such property found, if property is not
+     * of the type "GA4", or if caller does not have permissions to access it.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.Property>
         getProperty(com.google.analytics.admin.v1alpha.GetPropertyRequest request) {
@@ -4061,7 +5182,17 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getGetPropertyMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child Properties under the specified parent Account.
+     * Only "GA4" properties will be returned.
+     * Properties will be excluded if the caller does not have access.
+     * Soft-deleted (ie: "trashed") properties are excluded by default.
+     * Returns an empty list if no relevant properties are found.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.ListPropertiesResponse>
         listProperties(com.google.analytics.admin.v1alpha.ListPropertiesRequest request) {
@@ -4069,7 +5200,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getListPropertiesMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an "GA4" property with the specified location and attributes.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.Property>
         createProperty(com.google.analytics.admin.v1alpha.CreatePropertyRequest request) {
@@ -4077,14 +5214,33 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getCreatePropertyMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Marks target Property as soft-deleted (ie: "trashed") and returns it.
+     * This API does not have a method to restore soft-deleted properties.
+     * However, they can be restored using the Trash Can UI.
+     * If the properties are not restored before the expiration time, the Property
+     * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
+     * will be permanently purged.
+     * https://support.google.com/analytics/answer/6154772
+     * Returns an error if the target is not found, or is not an GA4 Property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteProperty(com.google.analytics.admin.v1alpha.DeletePropertyRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeletePropertyMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.Property>
         updateProperty(com.google.analytics.admin.v1alpha.UpdatePropertyRequest request) {
@@ -4092,7 +5248,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getUpdatePropertyMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a user's link to an account or property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.UserLink>
         getUserLink(com.google.analytics.admin.v1alpha.GetUserLinkRequest request) {
@@ -4100,7 +5262,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getGetUserLinkMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about multiple users' links to an account or property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>
         batchGetUserLinks(com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest request) {
@@ -4108,7 +5276,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getBatchGetUserLinksMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all user links on an account or property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.ListUserLinksResponse>
         listUserLinks(com.google.analytics.admin.v1alpha.ListUserLinksRequest request) {
@@ -4116,7 +5290,20 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getListUserLinksMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all user links on an account or property, including implicit ones
+     * that come from effective permissions granted by groups or organization
+     * admin roles.
+     * If a returned user link does not have direct permissions, they cannot
+     * be removed from the account or property directly with the DeleteUserLink
+     * command. They have to be removed from the group/etc that gives them
+     * permissions, which is currently only usable/discoverable in the GA or GMP
+     * UIs.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.AuditUserLinksResponse>
         auditUserLinks(com.google.analytics.admin.v1alpha.AuditUserLinksRequest request) {
@@ -4124,7 +5311,16 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getAuditUserLinksMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user link on an account or property.
+     * If the user with the specified email already has permissions on the
+     * account or property, then the user's existing permissions will be unioned
+     * with the permissions specified in the new UserLink.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.UserLink>
         createUserLink(com.google.analytics.admin.v1alpha.CreateUserLinkRequest request) {
@@ -4132,7 +5328,15 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getCreateUserLinkMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates information about multiple users' links to an account or property.
+     * This method is transactional. If any UserLink cannot be created, none of
+     * the UserLinks will be created.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>
         batchCreateUserLinks(
@@ -4141,7 +5345,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getBatchCreateUserLinksMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user link on an account or property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.UserLink>
         updateUserLink(com.google.analytics.admin.v1alpha.UpdateUserLinkRequest request) {
@@ -4149,7 +5359,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getUpdateUserLinkMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates information about multiple users' links to an account or property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>
         batchUpdateUserLinks(
@@ -4158,14 +5374,26 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getBatchUpdateUserLinksMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user link on an account or property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteUserLink(com.google.analytics.admin.v1alpha.DeleteUserLinkRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteUserLinkMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes information about multiple users' links to an account or property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         batchDeleteUserLinks(
             com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest request) {
@@ -4173,7 +5401,15 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getBatchDeleteUserLinksMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single WebDataStream
+     * Throws "Target not found" if no such web data stream found, or if the
+     * caller does not have permissions to access it.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.WebDataStream>
         getWebDataStream(com.google.analytics.admin.v1alpha.GetWebDataStreamRequest request) {
@@ -4181,14 +5417,26 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getGetWebDataStreamMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a web stream on a property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteWebDataStream(com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteWebDataStreamMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a web stream on a property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.WebDataStream>
         updateWebDataStream(com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest request) {
@@ -4196,7 +5444,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getUpdateWebDataStreamMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a web stream with the specified location and attributes.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.WebDataStream>
         createWebDataStream(com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest request) {
@@ -4204,7 +5458,15 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getCreateWebDataStreamMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child web data streams under the specified parent property.
+     * Web data streams will be excluded if the caller does not have access.
+     * Returns an empty list if no relevant web data streams are found.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse>
         listWebDataStreams(com.google.analytics.admin.v1alpha.ListWebDataStreamsRequest request) {
@@ -4212,7 +5474,15 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getListWebDataStreamsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single IosAppDataStream
+     * Throws "Target not found" if no such iOS app data stream found, or if the
+     * caller does not have permissions to access it.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.IosAppDataStream>
         getIosAppDataStream(com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest request) {
@@ -4220,7 +5490,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getGetIosAppDataStreamMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an iOS app stream on a property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteIosAppDataStream(
             com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest request) {
@@ -4228,7 +5504,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getDeleteIosAppDataStreamMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an iOS app stream on a property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.IosAppDataStream>
         updateIosAppDataStream(
@@ -4237,7 +5519,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getUpdateIosAppDataStreamMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an iOS app data stream with the specified location and attributes.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.IosAppDataStream>
         createIosAppDataStream(
@@ -4246,7 +5534,15 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getCreateIosAppDataStreamMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child iOS app data streams under the specified parent property.
+     * iOS app data streams will be excluded if the caller does not have access.
+     * Returns an empty list if no relevant iOS app data streams are found.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.ListIosAppDataStreamsResponse>
         listIosAppDataStreams(
@@ -4255,7 +5551,15 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getListIosAppDataStreamsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single AndroidAppDataStream
+     * Throws "Target not found" if no such android app data stream found, or if
+     * the caller does not have permissions to access it.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.AndroidAppDataStream>
         getAndroidAppDataStream(
@@ -4264,7 +5568,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getGetAndroidAppDataStreamMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an android app stream on a property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteAndroidAppDataStream(
             com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest request) {
@@ -4272,7 +5582,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getDeleteAndroidAppDataStreamMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an android app stream on a property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.AndroidAppDataStream>
         updateAndroidAppDataStream(
@@ -4281,7 +5597,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getUpdateAndroidAppDataStreamMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an android app stream with the specified location and attributes.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.AndroidAppDataStream>
         createAndroidAppDataStream(
@@ -4290,7 +5612,15 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getCreateAndroidAppDataStreamMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns child android app streams under the specified parent property.
+     * Android app streams will be excluded if the caller does not have access.
+     * Returns an empty list if no relevant android app streams are found.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsResponse>
         listAndroidAppDataStreams(
@@ -4299,7 +5629,15 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getListAndroidAppDataStreamsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the singleton enhanced measurement settings for this web stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
         getEnhancedMeasurementSettings(
@@ -4309,7 +5647,15 @@ public final class AnalyticsAdminServiceGrpc {
           request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the singleton enhanced measurement settings for this web stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
         updateEnhancedMeasurementSettings(
@@ -4319,7 +5665,14 @@ public final class AnalyticsAdminServiceGrpc {
           request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a FirebaseLink.
+     * Properties can have at most one FirebaseLink.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.FirebaseLink>
         createFirebaseLink(com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest request) {
@@ -4327,7 +5680,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getCreateFirebaseLinkMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a FirebaseLink on a property
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.FirebaseLink>
         updateFirebaseLink(com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest request) {
@@ -4335,14 +5694,27 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getUpdateFirebaseLinkMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a FirebaseLink on a property
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteFirebaseLink(com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteFirebaseLinkMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists FirebaseLinks on a property.
+     * Properties can have at most one FirebaseLink.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse>
         listFirebaseLinks(com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest request) {
@@ -4350,7 +5722,14 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getListFirebaseLinksMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the Site Tag for the specified web stream.
+     * Site Tags are immutable singletons.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.GlobalSiteTag>
         getGlobalSiteTag(com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest request) {
@@ -4358,7 +5737,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getGetGlobalSiteTagMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a GoogleAdsLink.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.GoogleAdsLink>
         createGoogleAdsLink(com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest request) {
@@ -4366,7 +5751,13 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getCreateGoogleAdsLinkMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a GoogleAdsLink on a property
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.GoogleAdsLink>
         updateGoogleAdsLink(com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest request) {
@@ -4374,14 +5765,26 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getUpdateGoogleAdsLinkMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a GoogleAdsLink on a property
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteGoogleAdsLink(com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteGoogleAdsLinkMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists GoogleAdsLinks on a property.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse>
         listGoogleAdsLinks(com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest request) {
@@ -4389,7 +5792,14 @@ public final class AnalyticsAdminServiceGrpc {
           getChannel().newCall(getListGoogleAdsLinksMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Get data sharing settings on an account.
+     * Data sharing settings are singletons.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.DataSharingSettings>
         getDataSharingSettings(
