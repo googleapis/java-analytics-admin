@@ -332,7 +332,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param account Required. The account to update. The account's `name` field is used to identify
    *     the account.
-   * @param update_mask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Account updateAccount(Account account, FieldMask updateMask) {
@@ -649,7 +649,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param property Required. The property to update. The property's `name` field is used to
    *     identify the property to be updated.
-   * @param update_mask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Property updateProperty(Property property, FieldMask updateMask) {
@@ -881,7 +881,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * UserLink.
    *
    * @param parent Required. Example format: accounts/1234
-   * @param user_link Required. The user link to create.
+   * @param userLink Required. The user link to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UserLink createUserLink(AccountName parent, UserLink userLink) {
@@ -902,7 +902,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * UserLink.
    *
    * @param parent Required. Example format: accounts/1234
-   * @param user_link Required. The user link to create.
+   * @param userLink Required. The user link to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UserLink createUserLink(PropertyName parent, UserLink userLink) {
@@ -923,7 +923,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * UserLink.
    *
    * @param parent Required. Example format: accounts/1234
-   * @param user_link Required. The user link to create.
+   * @param userLink Required. The user link to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UserLink createUserLink(String parent, UserLink userLink) {
@@ -994,7 +994,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Updates a user link on an account or property.
    *
-   * @param user_link Required. The user link to update.
+   * @param userLink Required. The user link to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UserLink updateUserLink(UserLink userLink) {
@@ -1233,9 +1233,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Updates a web stream on a property.
    *
-   * @param web_data_stream Required. The web stream to update. The `name` field is used to identify
+   * @param webDataStream Required. The web stream to update. The `name` field is used to identify
    *     the web stream to be updated.
-   * @param update_mask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WebDataStream updateWebDataStream(
@@ -1276,7 +1276,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource where this web data stream will be created. Format:
    *     properties/123
-   * @param web_data_stream Required. The web stream to create.
+   * @param webDataStream Required. The web stream to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WebDataStream createWebDataStream(PropertyName parent, WebDataStream webDataStream) {
@@ -1294,7 +1294,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource where this web data stream will be created. Format:
    *     properties/123
-   * @param web_data_stream Required. The web stream to create.
+   * @param webDataStream Required. The web stream to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WebDataStream createWebDataStream(String parent, WebDataStream webDataStream) {
@@ -1531,9 +1531,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Updates an iOS app stream on a property.
    *
-   * @param ios_app_data_stream Required. The iOS app stream to update. The `name` field is used to
+   * @param iosAppDataStream Required. The iOS app stream to update. The `name` field is used to
    *     identify the iOS app stream to be updated.
-   * @param update_mask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final IosAppDataStream updateIosAppDataStream(
@@ -1574,7 +1574,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource where this ios app data stream will be created.
    *     Format: properties/123
-   * @param ios_app_data_stream Required. The iOS app data stream to create.
+   * @param iosAppDataStream Required. The iOS app data stream to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final IosAppDataStream createIosAppDataStream(
@@ -1593,7 +1593,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource where this ios app data stream will be created.
    *     Format: properties/123
-   * @param ios_app_data_stream Required. The iOS app data stream to create.
+   * @param iosAppDataStream Required. The iOS app data stream to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final IosAppDataStream createIosAppDataStream(
@@ -1832,9 +1832,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Updates an android app stream on a property.
    *
-   * @param android_app_data_stream Required. The android app stream to update. The `name` field is
+   * @param androidAppDataStream Required. The android app stream to update. The `name` field is
    *     used to identify the android app stream to be updated.
-   * @param update_mask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AndroidAppDataStream updateAndroidAppDataStream(
@@ -1876,7 +1876,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource where this android app data stream will be created.
    *     Format: properties/123
-   * @param android_app_data_stream Required. The android app stream to create.
+   * @param androidAppDataStream Required. The android app stream to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AndroidAppDataStream createAndroidAppDataStream(
@@ -1895,7 +1895,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource where this android app data stream will be created.
    *     Format: properties/123
-   * @param android_app_data_stream Required. The android app stream to create.
+   * @param androidAppDataStream Required. The android app stream to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AndroidAppDataStream createAndroidAppDataStream(
@@ -2077,9 +2077,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Updates the singleton enhanced measurement settings for this web stream. Note that the stream
    * must enable enhanced measurement for these settings to take effect.
    *
-   * @param enhanced_measurement_settings Required. The settings to update. The `name` field is used
+   * @param enhancedMeasurementSettings Required. The settings to update. The `name` field is used
    *     to identify the settings to be updated.
-   * @param update_mask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EnhancedMeasurementSettings updateEnhancedMeasurementSettings(
@@ -2124,7 +2124,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Properties can have at most one FirebaseLink.
    *
    * @param parent Required. Format: properties/{property_id} Example: properties/1234
-   * @param firebase_link Required. The Firebase link to create.
+   * @param firebaseLink Required. The Firebase link to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FirebaseLink createFirebaseLink(PropertyName parent, FirebaseLink firebaseLink) {
@@ -2143,7 +2143,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Properties can have at most one FirebaseLink.
    *
    * @param parent Required. Format: properties/{property_id} Example: properties/1234
-   * @param firebase_link Required. The Firebase link to create.
+   * @param firebaseLink Required. The Firebase link to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FirebaseLink createFirebaseLink(String parent, FirebaseLink firebaseLink) {
@@ -2184,8 +2184,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Updates a FirebaseLink on a property
    *
-   * @param firebase_link Required. The Firebase link to update.
-   * @param update_mask The list of fields to be updated. Omitted fields will not be updated.
+   * @param firebaseLink Required. The Firebase link to update.
+   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FirebaseLink updateFirebaseLink(FirebaseLink firebaseLink, FieldMask updateMask) {
@@ -2376,7 +2376,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Creates a GoogleAdsLink.
    *
    * @param parent Required. Example format: properties/1234
-   * @param google_ads_link Required. The GoogleAdsLink to create.
+   * @param googleAdsLink Required. The GoogleAdsLink to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GoogleAdsLink createGoogleAdsLink(PropertyName parent, GoogleAdsLink googleAdsLink) {
@@ -2393,7 +2393,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Creates a GoogleAdsLink.
    *
    * @param parent Required. Example format: properties/1234
-   * @param google_ads_link Required. The GoogleAdsLink to create.
+   * @param googleAdsLink Required. The GoogleAdsLink to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GoogleAdsLink createGoogleAdsLink(String parent, GoogleAdsLink googleAdsLink) {
@@ -2431,8 +2431,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Updates a GoogleAdsLink on a property
    *
-   * @param google_ads_link The GoogleAdsLink to update
-   * @param update_mask The list of fields to be updated. Omitted fields will not be updated.
+   * @param googleAdsLink The GoogleAdsLink to update
+   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GoogleAdsLink updateGoogleAdsLink(
