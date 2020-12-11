@@ -11,8 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
-        "internalRef": "346372957"
+        "sha": "6d65640b1fcbdf26ea76cb720de0ac138cae9bed",
+        "internalRef": "347036369"
       }
     },
     {
@@ -118,6 +118,7 @@
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/AccountName.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/AccountOrBuilder.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/AccountSummary.java",
+    "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/AccountSummaryName.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/AccountSummaryOrBuilder.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/AnalyticsAdminProto.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/AndroidAppDataStream.java",
