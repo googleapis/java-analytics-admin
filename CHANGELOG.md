@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.2.6](https://www.github.com/googleapis/java-analytics-admin/compare/v0.2.5...v0.2.6) (2021-01-14)
+
+
+### Documentation
+
+* put markdown table in a codeblock ([#132](https://www.github.com/googleapis/java-analytics-admin/issues/132)) ([15ccf20](https://www.github.com/googleapis/java-analytics-admin/commit/15ccf20bf20791d2a0192d67302e40a46a5cf432))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.18.0 ([#136](https://www.github.com/googleapis/java-analytics-admin/issues/136)) ([6d52546](https://www.github.com/googleapis/java-analytics-admin/commit/6d52546b2fc5703571801d5b8045574ad9985bf1))
+
 ### [0.2.5](https://www.github.com/googleapis/java-analytics-admin/compare/v0.2.4...v0.2.5) (2020-12-15)
 
 
