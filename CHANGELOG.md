@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-analytics-admin/compare/v0.4.0...v0.5.0) (2021-08-04)
+
+
+### Features
+
+* configure initial sp version ([#253](https://www.github.com/googleapis/java-analytics-admin/issues/253)) ([cd4912b](https://www.github.com/googleapis/java-analytics-admin/commit/cd4912bbe8f05c0a99773be73586f550418952db))
+
 ## [0.4.0](https://www.github.com/googleapis/java-analytics-admin/compare/v0.3.2...v0.4.0) (2021-06-15)
 
 
