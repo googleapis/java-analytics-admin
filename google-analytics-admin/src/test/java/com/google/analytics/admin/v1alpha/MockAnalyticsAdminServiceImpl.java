@@ -156,7 +156,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ProvisionAccountTicket, expected %s or %s",
+                  "Unrecognized response type %s for method ProvisionAccountTicket, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ProvisionAccountTicketResponse.class.getName(),
                   Exception.class.getName())));
@@ -178,7 +179,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAccountSummaries, expected %s or %s",
+                  "Unrecognized response type %s for method ListAccountSummaries, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAccountSummariesResponse.class.getName(),
                   Exception.class.getName())));
@@ -409,7 +411,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchCreateUserLinks, expected %s or %s",
+                  "Unrecognized response type %s for method BatchCreateUserLinks, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchCreateUserLinksResponse.class.getName(),
                   Exception.class.getName())));
@@ -452,7 +455,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchUpdateUserLinks, expected %s or %s",
+                  "Unrecognized response type %s for method BatchUpdateUserLinks, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchUpdateUserLinksResponse.class.getName(),
                   Exception.class.getName())));
@@ -494,7 +498,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchDeleteUserLinks, expected %s or %s",
+                  "Unrecognized response type %s for method BatchDeleteUserLinks, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -642,7 +647,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteIosAppDataStream, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteIosAppDataStream, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -663,7 +669,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateIosAppDataStream, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateIosAppDataStream, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   IosAppDataStream.class.getName(),
                   Exception.class.getName())));
@@ -685,7 +692,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListIosAppDataStreams, expected %s or %s",
+                  "Unrecognized response type %s for method ListIosAppDataStreams, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListIosAppDataStreamsResponse.class.getName(),
                   Exception.class.getName())));
@@ -707,7 +715,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetAndroidAppDataStream, expected %s or %s",
+                  "Unrecognized response type %s for method GetAndroidAppDataStream, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   AndroidAppDataStream.class.getName(),
                   Exception.class.getName())));
@@ -728,7 +737,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteAndroidAppDataStream, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteAndroidAppDataStream, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -750,7 +760,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateAndroidAppDataStream, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateAndroidAppDataStream, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AndroidAppDataStream.class.getName(),
                   Exception.class.getName())));
@@ -772,7 +783,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAndroidAppDataStreams, expected %s or %s",
+                  "Unrecognized response type %s for method ListAndroidAppDataStreams, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAndroidAppDataStreamsResponse.class.getName(),
                   Exception.class.getName())));
@@ -794,7 +806,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetEnhancedMeasurementSettings, expected %s or %s",
+                  "Unrecognized response type %s for method GetEnhancedMeasurementSettings,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   EnhancedMeasurementSettings.class.getName(),
                   Exception.class.getName())));
@@ -816,7 +829,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateEnhancedMeasurementSettings, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateEnhancedMeasurementSettings,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   EnhancedMeasurementSettings.class.getName(),
                   Exception.class.getName())));
@@ -1007,7 +1021,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetDataSharingSettings, expected %s or %s",
+                  "Unrecognized response type %s for method GetDataSharingSettings, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DataSharingSettings.class.getName(),
                   Exception.class.getName())));
@@ -1029,7 +1044,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetMeasurementProtocolSecret, expected %s or %s",
+                  "Unrecognized response type %s for method GetMeasurementProtocolSecret, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   MeasurementProtocolSecret.class.getName(),
                   Exception.class.getName())));
@@ -1051,7 +1067,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListMeasurementProtocolSecrets, expected %s or %s",
+                  "Unrecognized response type %s for method ListMeasurementProtocolSecrets,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListMeasurementProtocolSecretsResponse.class.getName(),
                   Exception.class.getName())));
@@ -1073,7 +1090,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateMeasurementProtocolSecret, expected %s or %s",
+                  "Unrecognized response type %s for method CreateMeasurementProtocolSecret,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   MeasurementProtocolSecret.class.getName(),
                   Exception.class.getName())));
@@ -1094,7 +1112,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteMeasurementProtocolSecret, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteMeasurementProtocolSecret,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -1116,7 +1135,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateMeasurementProtocolSecret, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateMeasurementProtocolSecret,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   MeasurementProtocolSecret.class.getName(),
                   Exception.class.getName())));
@@ -1138,7 +1158,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SearchChangeHistoryEvents, expected %s or %s",
+                  "Unrecognized response type %s for method SearchChangeHistoryEvents, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchChangeHistoryEventsResponse.class.getName(),
                   Exception.class.getName())));
@@ -1160,7 +1181,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetGoogleSignalsSettings, expected %s or %s",
+                  "Unrecognized response type %s for method GetGoogleSignalsSettings, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GoogleSignalsSettings.class.getName(),
                   Exception.class.getName())));
@@ -1182,7 +1204,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateGoogleSignalsSettings, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateGoogleSignalsSettings, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GoogleSignalsSettings.class.getName(),
                   Exception.class.getName())));
@@ -1203,7 +1226,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateConversionEvent, expected %s or %s",
+                  "Unrecognized response type %s for method CreateConversionEvent, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConversionEvent.class.getName(),
                   Exception.class.getName())));
@@ -1245,7 +1269,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteConversionEvent, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteConversionEvent, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -1267,7 +1292,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListConversionEvents, expected %s or %s",
+                  "Unrecognized response type %s for method ListConversionEvents, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListConversionEventsResponse.class.getName(),
                   Exception.class.getName())));
@@ -1289,7 +1315,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetDisplayVideo360AdvertiserLink, expected %s or %s",
+                  "Unrecognized response type %s for method GetDisplayVideo360AdvertiserLink,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DisplayVideo360AdvertiserLink.class.getName(),
                   Exception.class.getName())));
@@ -1311,7 +1338,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDisplayVideo360AdvertiserLinks, expected %s or %s",
+                  "Unrecognized response type %s for method ListDisplayVideo360AdvertiserLinks,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDisplayVideo360AdvertiserLinksResponse.class.getName(),
                   Exception.class.getName())));
@@ -1333,7 +1361,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDisplayVideo360AdvertiserLink, expected %s or %s",
+                  "Unrecognized response type %s for method CreateDisplayVideo360AdvertiserLink,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DisplayVideo360AdvertiserLink.class.getName(),
                   Exception.class.getName())));
@@ -1354,7 +1383,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteDisplayVideo360AdvertiserLink, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteDisplayVideo360AdvertiserLink,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -1376,7 +1406,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateDisplayVideo360AdvertiserLink, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateDisplayVideo360AdvertiserLink,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DisplayVideo360AdvertiserLink.class.getName(),
                   Exception.class.getName())));
@@ -1398,7 +1429,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetDisplayVideo360AdvertiserLinkProposal, expected %s or %s",
+                  "Unrecognized response type %s for method"
+                      + " GetDisplayVideo360AdvertiserLinkProposal, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DisplayVideo360AdvertiserLinkProposal.class.getName(),
                   Exception.class.getName())));
@@ -1420,7 +1452,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDisplayVideo360AdvertiserLinkProposals, expected %s or %s",
+                  "Unrecognized response type %s for method"
+                      + " ListDisplayVideo360AdvertiserLinkProposals, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDisplayVideo360AdvertiserLinkProposalsResponse.class.getName(),
                   Exception.class.getName())));
@@ -1442,7 +1475,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDisplayVideo360AdvertiserLinkProposal, expected %s or %s",
+                  "Unrecognized response type %s for method"
+                      + " CreateDisplayVideo360AdvertiserLinkProposal, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DisplayVideo360AdvertiserLinkProposal.class.getName(),
                   Exception.class.getName())));
@@ -1464,7 +1498,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteDisplayVideo360AdvertiserLinkProposal, expected %s or %s",
+                  "Unrecognized response type %s for method"
+                      + " DeleteDisplayVideo360AdvertiserLinkProposal, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -1486,7 +1521,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ApproveDisplayVideo360AdvertiserLinkProposal, expected %s or %s",
+                  "Unrecognized response type %s for method"
+                      + " ApproveDisplayVideo360AdvertiserLinkProposal, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ApproveDisplayVideo360AdvertiserLinkProposalResponse.class.getName(),
                   Exception.class.getName())));
@@ -1508,7 +1544,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CancelDisplayVideo360AdvertiserLinkProposal, expected %s or %s",
+                  "Unrecognized response type %s for method"
+                      + " CancelDisplayVideo360AdvertiserLinkProposal, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DisplayVideo360AdvertiserLinkProposal.class.getName(),
                   Exception.class.getName())));
@@ -1529,7 +1566,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateCustomDimension, expected %s or %s",
+                  "Unrecognized response type %s for method CreateCustomDimension, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CustomDimension.class.getName(),
                   Exception.class.getName())));
@@ -1550,7 +1588,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateCustomDimension, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateCustomDimension, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CustomDimension.class.getName(),
                   Exception.class.getName())));
@@ -1572,7 +1611,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListCustomDimensions, expected %s or %s",
+                  "Unrecognized response type %s for method ListCustomDimensions, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListCustomDimensionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -1593,7 +1633,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ArchiveCustomDimension, expected %s or %s",
+                  "Unrecognized response type %s for method ArchiveCustomDimension, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -1742,7 +1783,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetDataRetentionSettings, expected %s or %s",
+                  "Unrecognized response type %s for method GetDataRetentionSettings, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DataRetentionSettings.class.getName(),
                   Exception.class.getName())));
@@ -1764,7 +1806,8 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateDataRetentionSettings, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateDataRetentionSettings, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DataRetentionSettings.class.getName(),
                   Exception.class.getName())));

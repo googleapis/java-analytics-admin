@@ -251,7 +251,8 @@ public class UserLinkName implements ResourceName {
     private Builder(UserLinkName userLinkName) {
       Preconditions.checkArgument(
           Objects.equals(userLinkName.pathTemplate, ACCOUNT_USER_LINK),
-          "toBuilder is only supported when UserLinkName has the pattern of accounts/{account}/userLinks/{user_link}");
+          "toBuilder is only supported when UserLinkName has the pattern of"
+              + " accounts/{account}/userLinks/{user_link}");
       this.account = userLinkName.account;
       this.userLink = userLinkName.userLink;
     }
