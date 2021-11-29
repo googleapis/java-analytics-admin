@@ -141,8 +141,7 @@ public final class ResourcesProto {
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + ".google/analytics/admin/v1alpha/resources.proto\022\036google.analytics.admin.v1alpha"
-          + "\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\032\036google/protobuf/wrappers.proto\"\216\002\n"
+          + ".google/analytics/admin/v1alpha/resources.proto\022\036google.analytics.admin.v1alpha\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\032\036google/protobuf/wrappers.proto\"\216\002\n"
           + "\007Account\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
