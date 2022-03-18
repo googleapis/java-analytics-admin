@@ -57,13 +57,32 @@
     <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient</className>
     <method>com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient$ListMeasurementProtocolSecretsPagedResponse listMeasurementProtocolSecrets(com.google.analytics.admin.v1alpha.WebDataStreamName)</method>
     <to>com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient$ListMeasurementProtocolSecretsPagedResponse listMeasurementProtocolSecrets(com.google.analytics.admin.v1alpha.DataStreamName)</to>
-  </difference>-->
-  <!-- This doesn't work either -->
+  </difference>
   <difference>
     <differenceType>7005</differenceType>
     <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient</className>
     <method>* listMeasurementProtocolSecrets(*)</method>
     <to>* listMeasurementProtocolSecrets(*)</to>
   </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient*</className>
+    <method>com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient* listMeasurementProtocolSecrets(com.google.analytics.admin.v1alpha.WebDataStreamName)</method>
+    <to>com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient* listMeasurementProtocolSecrets(com.google.analytics.admin.v1alpha.DataStreamName)</to>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient*</className>
+    <method>com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient$ListMeasurementProtocolSecretsPagedResponse listMeasurementProtocolSecrets(com.google.analytics.admin.v1alpha.WebDataStreamName)</method>
+    <to>com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient$ListMeasurementProtocolSecretsPagedResponse listMeasurementProtocolSecrets(com.google.analytics.admin.v1alpha.DataStreamName)</to>
+  </difference>
 
+   -->
+  <!-- This doesn't work either -->
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient*</className>
+    <method>com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient$ListMeasurementProtocolSecretsPagedResponse listMeasurementProtocolSecrets(com.google.analytics.admin.v1alpha.WebDataStreamName)</method>
+    <to>com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient$ListMeasurementProtocolSecretsPagedResponse listMeasurementProtocolSecrets(com.google.analytics.admin.v1alpha.DataStreamName)</to>
+  </difference>
 </differences>
