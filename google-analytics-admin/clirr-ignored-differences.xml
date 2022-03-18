@@ -26,4 +26,44 @@
     <className>com/google/analytics/admin/v1alpha/stub/*AnalyticsAdminServiceStub*</className>
     <method>* *EnhancedMeasurementSettings*(*)</method>
   </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient</className>
+    <method>* *DataStream*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient*DataStreams*</className>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceSettings*</className>
+    <method>* *DataStream*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/stub/*AnalyticsAdminServiceStub*</className>
+    <method>* *DataStream*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient</className>
+    <method>com.google.analytics.admin.v1alpha.MeasurementProtocolSecret createMeasurementProtocolSecret(com.google.analytics.admin.v1alpha.WebDataStreamName, com.google.analytics.admin.v1alpha.MeasurementProtocolSecret)</method>
+    <to>com.google.analytics.admin.v1alpha.MeasurementProtocolSecret createMeasurementProtocolSecret(com.google.analytics.admin.v1alpha.DataStreamName, com.google.analytics.admin.v1alpha.MeasurementProtocolSecret)</to>
+  </difference>
+  <!-- Not working
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient</className>
+    <method>com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient$ListMeasurementProtocolSecretsPagedResponse listMeasurementProtocolSecrets(com.google.analytics.admin.v1alpha.WebDataStreamName)</method>
+    <to>com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient$ListMeasurementProtocolSecretsPagedResponse listMeasurementProtocolSecrets(com.google.analytics.admin.v1alpha.DataStreamName)</to>
+  </difference>-->
+  <!-- This doesn't work either -->
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient</className>
+    <method>* listMeasurementProtocolSecrets(*)</method>
+    <to>* listMeasurementProtocolSecrets(*)</to>
+  </difference>
+
 </differences>
