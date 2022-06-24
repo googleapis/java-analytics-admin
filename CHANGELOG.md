@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.10.2](https://github.com/googleapis/java-analytics-admin/compare/v0.10.1...v0.10.2) (2022-06-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#414](https://github.com/googleapis/java-analytics-admin/issues/414)) ([d1ada25](https://github.com/googleapis/java-analytics-admin/commit/d1ada253452e10731fb6898db205fb27dfc1b538))
+
+### [0.10.1](https://github.com/googleapis/java-analytics-admin/compare/v0.10.0...v0.10.1) (2022-05-20)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#408](https://github.com/googleapis/java-analytics-admin/issues/408)) ([5ca8037](https://github.com/googleapis/java-analytics-admin/commit/5ca8037fe07e9753121e2721f083e7114050b775))
+
+## [0.10.0](https://github.com/googleapis/java-analytics-admin/compare/v0.9.1...v0.10.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-analytics-admin/issues/1440)) ([#404](https://github.com/googleapis/java-analytics-admin/issues/404)) ([52bf898](https://github.com/googleapis/java-analytics-admin/commit/52bf8986ae06b81411eafe742aa9585dde132dc0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#403](https://github.com/googleapis/java-analytics-admin/issues/403)) ([4407a5d](https://github.com/googleapis/java-analytics-admin/commit/4407a5dc7d764c6599b5366f7ae577c86d8e385b))
+
 ### [0.9.1](https://github.com/googleapis/java-analytics-admin/compare/v0.9.0...v0.9.1) (2022-04-15)
 
 
