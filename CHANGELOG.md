@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.5](https://github.com/googleapis/java-analytics-admin/compare/v0.13.4...v0.13.5) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([8926f36](https://github.com/googleapis/java-analytics-admin/commit/8926f36286609c897e6421b356cef973439ad161))
+
 ## [0.13.4](https://github.com/googleapis/java-analytics-admin/compare/v0.13.3...v0.13.4) (2022-10-03)
 
 
