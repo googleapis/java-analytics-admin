@@ -61,7 +61,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-analytics-admin-v1alpha</artifactId>
-        <version>0.14.0</version><!-- {x-version-update:grpc-google-analytics-admin-v1alpha:current} -->
+        <version>0.13.5</version><!-- {x-version-update:grpc-google-analytics-admin-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
