@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.analytics</groupId>
     <artifactId>google-analytics-admin-parent</artifactId>
-    <version>0.13.5</version><!-- {x-version-update:google-analytics-admin:current} -->
+    <version>0.14.0</version><!-- {x-version-update:google-analytics-admin:current} -->
   </parent>
   <properties>
     <site.installationModule>google-analytics-admin</site.installationModule>
